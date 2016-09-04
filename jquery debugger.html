@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".idea/jquery1.7.1.js"></script>
+</head>
+<body>
+<div id="description">
+    this is a body description
+</div>
+<form name="divId">
+    <div id="divId"></div>
+</form>
+</body>
+</html>
+<script>
+    alert(document.getElementById("description").outerHTML);
+    alert(document.getElementById("divId").outerHTML);
+</script>
