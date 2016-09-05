@@ -6115,17 +6115,26 @@
         dest.removeAttribute( jQuery.expando );
     }
 
+    /**
+     * 先创建一个文档片段DocumentFragment,然后调用方法jquery.clean()将HTML代码转换为DOM元素，并存储在创建的文档片段中。
+     * @param args 数组，含有待转换的DOM元素的HTML代码
+     * @param nodes 数组，含有文档对象，jquery对象或DOM元素，用于修正创建文档片段DocumentFragment的文档对象。
+     * @param scripts 数组，用于存放HTML代码中的script元素。
+     * @returns {{fragment: *, cacheable: *}}
+     */
     jQuery.buildFragment = function( args, nodes, scripts ) {
+        //fragment可能指向稍后创建的文档片段Document Fragment
         var fragment, cacheable, cacheresults, doc,
             first = args[ 0 ];
-
-        // nodes may contain either an explicit document object,
+        //doc表示创建文档片段的文档对象，修正doc
+        // nodes may contain either an explicit(明确的) document object,
         // a jQuery collection or context object.
-        // If nodes[0] contains a valid object to assign to doc
+        // If nodes[0] contains a valid object to assign(指定) to doc
         if ( nodes && nodes[0] ) {
             doc = nodes[0].ownerDocument || nodes[0];
         }
-
+        //如果调用jquery构造函数时传入的第二个参数是javascript对象，此时doc是传入的javascript对象而不是文档对象。
+        //eg：传入的是$('<div></div>',{'class':'test'})；这时doc就是{'class','test'}，就需要进行下面的判断
         // Ensure that an attr object doesn't incorrectly stand in as a document object
         // Chrome and Firefox seem to allow this to occur and will throw exception
         // Fixes #8950
@@ -6142,7 +6151,7 @@
             first.charAt(0) === "<" && !rnocache.test( first ) &&
             (jQuery.support.checkClone || !rchecked.test( first )) &&
             (jQuery.support.html5Clone || !rnoshimcache.test( first )) ) {
-
+            //此状态表示，在使用转换后的DOM元素时，如果cacheable为true，则必须先复制一份在使用，否则可以直接使用
             cacheable = true;
 
             cacheresults = jQuery.fragments[ first ];
@@ -6150,20 +6159,23 @@
                 fragment = cacheresults;
             }
         }
-
+        //转换HTML代码为DOM元素  ！fragment为true可能有三种情况：1.HTML不符合缓存条件，2.符合缓存条件，但是此时是第一次转换，
+        //不存在对应的缓存，3.代码符合缓存条件，此时是第二次转换，对应缓存值是1
         if ( !fragment ) {
             fragment = doc.createDocumentFragment();
             jQuery.clean( args, doc, fragment, scripts );
         }
-
+        //如果HTML代码满足缓存条件，则将其缓存至jquery.fragments中；
+        //第一次转换后设置缓存值为1，第二次转换后设置为文档片段，从第三次开始则从缓存中读取。
         if ( cacheable ) {
             jQuery.fragments[ first ] = cacheresults ? fragment : 1;
         }
-
+        //最后返回了文档片段和缓存状态cacheable的对象
         return { fragment: fragment, cacheable: cacheable };
     };
 
     jQuery.fragments = {};
+
 
     jQuery.each({
         appendTo: "append",
@@ -6285,7 +6297,10 @@
             // Return the cloned set
             return clone;
         },
-
+        //elems:数组，包含了待转换的HTML代码；
+        //context：文档对象，该参数在方法jquery.buildFragment()中被修正为正确的doc对象
+        //fragment：文档片段，作为存放转换后的DOM元素的占位符。
+        //scripts：数组，用于存放转换后的DOM元素中的script元素
         clean: function( elems, context, fragment, scripts ) {
             var checkScriptType;
 
@@ -6293,29 +6308,34 @@
 
             // !context.createElement fails in IE with an error but returns typeof 'object'
             if ( typeof context.createElement === "undefined" ) {
+                //ownerDocument表示了DOM元素所在的文档对象
                 context = context.ownerDocument || context[0] && context[0].ownerDocument || document;
             }
 
             var ret = [], j;
-
+            //遍历待转换的HTML代码数组elems
+            //使用！=可以同时过滤null和undefined,但是又不会过滤掉0
             for ( var i = 0, elem; (elem = elems[i]) != null; i++ ) {
+                //如果elem是一个数值型，可以让elem加一个空字符串，吧elem转换为字符串
                 if ( typeof elem === "number" ) {
                     elem += "";
                 }
-
+                //过滤空字符串
                 if ( !elem ) {
                     continue;
                 }
 
                 // Convert html string into DOM nodes
                 if ( typeof elem === "string" ) {
+                    //HTML代码中不包含标签，字符代码和数字代码
                     if ( !rhtml.test( elem ) ) {
                         elem = context.createTextNode( elem );
                     } else {
-                        // Fix "XHTML"-style tags in all browsers
+                        // Fix "XHTML"-style tags in all browsers ==>修正自关闭标签
                         elem = elem.replace(rxhtmlTag, "<$1></$2>");
 
                         // Trim whitespace, otherwise indexOf won't work as expected
+                        //提取HTML代码中的标签部分，删除了前导空白符和左尖括号，并转换为小写赋值给变量wrap。
                         var tag = ( rtagName.exec( elem ) || ["", ""] )[1].toLowerCase(),
                             wrap = wrapMap[ tag ] || wrapMap._default,
                             depth = wrap[0],
@@ -6334,6 +6354,7 @@
                         div.innerHTML = wrap[1] + elem + wrap[2];
 
                         // Move to the right depth
+                        //层层剥去包裹的父元素
                         while ( depth-- ) {
                             div = div.lastChild;
                         }
@@ -6341,14 +6362,17 @@
                         // Remove IE's autoinserted <tbody> from table fragments
                         if ( !jQuery.support.tbody ) {
 
-                            // String was a <table>, *may* have spurious <tbody>
+                            // String was a <table>, *may* have spurious(欺骗的) <tbody>
+                            //rtbody用正则检查HTML代码中是否含有tbody标签
                             var hasBody = rtbody.test(elem),
                                 tbody = tag === "table" && !hasBody ?
+                                    //表示HTML代码中有table标签，但是没有tbody标签
                                 div.firstChild && div.firstChild.childNodes :
 
                                     // String was a bare <thead> or <tfoot>
                                     wrap[1] === "<table>" && !hasBody ?
                                         div.childNodes :
+                                        //HTML代码中含有tbody标签
                                         [];
 
                             for ( j = tbody.length - 1; j >= 0 ; --j ) {
@@ -6357,12 +6381,13 @@
                                 }
                             }
                         }
-
+                        //插入IE6/7/8自动剔除的前导空白符
                         // IE completely kills leading whitespace when innerHTML is used
+                        //rleadingWhitespace==>检测HTML代码中是否含有前导空白符
                         if ( !jQuery.support.leadingWhitespace && rleadingWhitespace.test( elem ) ) {
                             div.insertBefore( context.createTextNode( rleadingWhitespace.exec(elem)[0] ), div.firstChild );
                         }
-
+                        //取到转换后的DOM元素集合
                         elem = div.childNodes;
                     }
                 }
@@ -6389,6 +6414,7 @@
 
             if ( fragment ) {
                 checkScriptType = function( elem ) {
+                    //检测script元素有无指定type
                     return !elem.type || rscriptType.test( elem.type );
                 };
                 for ( i = 0; ret[i]; i++ ) {
