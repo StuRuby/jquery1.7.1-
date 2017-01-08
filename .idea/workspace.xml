@@ -28,37 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jquery1.7.1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <file leaf-file-name="jquery debugger.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jquery debugger.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="4169" column="13" selection-start-line="4169" selection-start-column="13" selection-end-line="4169" selection-end-column="13" />
+            <state relative-caret-position="291">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
-                <element signature="e#4412#11072#0" expanded="false" />
-                <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-                <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-                <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+                <element signature="e#638#644#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <file leaf-file-name="jquery1.7.1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery debugger.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jquery debugger.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="3512" column="28" selection-start-line="3512" selection-start-column="28" selection-end-line="3512" selection-end-column="28" />
+              <folding>
+                <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+                <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+                <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +63,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/jquery test.js" />
-        <option value="$PROJECT_DIR$/jquery debugger.html" />
         <option value="$PROJECT_DIR$/jquery1.7.1.js" />
+        <option value="$PROJECT_DIR$/jquery debugger.html" />
       </list>
     </option>
   </component>
@@ -85,8 +76,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="800" />
+    <option name="width" value="1435" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -119,8 +110,9 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/HTML5 Apps/canvas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../css" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -201,17 +193,28 @@
       <workItem from="1474300408376" duration="18000" />
       <workItem from="1474623059752" duration="2425000" />
       <workItem from="1474694268249" duration="16000" />
+      <workItem from="1481529582594" duration="535000" />
+      <workItem from="1481786241096" duration="5503000" />
+      <workItem from="1481909128229" duration="1355000" />
+      <workItem from="1481960100359" duration="1554000" />
+      <workItem from="1482089376804" duration="92000" />
+      <workItem from="1482165455590" duration="9081000" />
+      <workItem from="1482305257264" duration="405000" />
+      <workItem from="1482391674967" duration="3707000" />
+      <workItem from="1482565412474" duration="2067000" />
+      <workItem from="1482685011405" duration="326000" />
+      <workItem from="1482685712965" duration="35000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21277000" />
+    <option name="totallyTimeSpent" value="45937000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
+    <frame x="0" y="23" width="1435" height="803" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.110416666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13658537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -228,6 +231,24 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13658537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -247,15 +268,56 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -263,8 +325,7 @@
     <entry file="file://$PROJECT_DIR$/jquery test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -272,19 +333,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="67881">
+          <caret line="3993" column="13" selection-start-line="3993" selection-start-column="13" selection-end-line="3993" selection-end-column="13" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -293,7 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -301,7 +362,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -310,10 +373,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -322,7 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -330,7 +403,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -339,10 +414,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -351,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -359,7 +432,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -368,10 +443,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -380,7 +454,180 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70873">
+          <caret line="4169" column="13" selection-start-line="4169" selection-start-column="13" selection-end-line="4169" selection-end-column="13" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery debugger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -388,7 +635,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -397,10 +646,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -409,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -417,7 +664,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,10 +675,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -438,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -446,7 +693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -455,10 +704,9 @@
         <state relative-caret-position="306">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -467,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -476,10 +723,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
@@ -489,40 +735,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="4169" column="13" selection-start-line="4169" selection-start-column="13" selection-end-line="4169" selection-end-column="13" />
-          <folding>
-            <element signature="e#4412#11072#0" expanded="false" />
-            <marker date="1474624865000" expanded="true" signature="57420:57451" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="65939:65970" ph="..." />
-            <marker date="1474624865000" expanded="true" signature="67280:67290" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jquery test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery1.7.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="3512" column="28" selection-start-line="3512" selection-start-column="28" selection-end-line="3512" selection-end-column="28" />
+          <folding>
+            <marker date="1482566742000" expanded="true" signature="59155:59186" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="69392:69423" ph="..." />
+            <marker date="1482566742000" expanded="true" signature="70871:70881" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jquery debugger.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="291">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#644#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

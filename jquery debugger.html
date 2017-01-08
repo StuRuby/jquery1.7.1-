@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="jquery1.7.1.js" ></script>
+    <style>
+        div{
+            width: 300px;
+            height: auto;
+            display: inline-block;
+            left: 20px;
+            padding-left: 20px;
 
+        }
+        #divId{
+            float: left;
+
+        }
+        #divId img{
+            filter:opacity(90%)
+        }
+        #divId2{
+            float: right;
+            padding-right: 300px;
+        }
+    </style>
 </head>
 <body>
-<div id="myDiv1">操作1
-    <div id="myDiv2">操作2
-        <div id="myDiv3">操作3</div>
-    </div>
-</div>
-<form name="divId">
-    <div id="divId"></div>
-</form>
+<div id="divId"><img src="http://img.7160.com/uploads/allimg/120602/1-120602200132.jpg"></div>&nbsp;
+<div id="divId2"><img src="http://img.7160.com/uploads/allimg/120602/1-120602200132.jpg"></div>
 </body>
 </html>
 <script>
-    var domQuery=$.noConflict(true);
-var eles=domQuery("#myDiv1");
-    console.log(eles.attr("id"));
+  
 </script>
