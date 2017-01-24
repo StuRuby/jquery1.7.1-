@@ -7463,7 +7463,7 @@
          * 2) the catchall symbol "*" can be used
          * 3) selection will start with transport dataType and THEN go to "*" if needed
          */
-        transports = {},
+        transports = {},//请求发送器工厂函数集，其结构为数据类型与请求发送器工厂函数的映射
 
         // Document location
         ajaxLocation,
@@ -7493,6 +7493,10 @@
     function addToPrefiltersOrTransports(structure) {
 
         // dataTypeExpression is optional and defaults to "*"
+        /**
+         * dataTypeExpression : 字符串，可选的，表示一个或多个空格分隔的数据类型
+         * func ： 表示数据类型对应的前置过滤器或请求发送器工厂函数
+         */
         return function (dataTypeExpression, func) {
 
             if (typeof dataTypeExpression !== "string") {
@@ -7526,6 +7530,17 @@
     }
 
 // Base inspection function for prefilters and transports
+    //负责应用前置过滤器或获取请求发送器
+    /**
+     *
+     * @param structure 指向前置过滤器集prefilters或请求发送器工厂函数集transports,其值取决于调用该函数时传入的值
+     * @param options 当前请求的完整选项集
+     * @param originalOptions 传给方法jQuery.ajax(url,options)的原始选项集
+     * @param jqXHR
+     * @param dataType
+     * @param inspected 存放已经执行过的数据类型的对象，仅在递归调用该函数时被传入
+     * @returns {*}
+     */
     function inspectPrefiltersOrTransports(structure, options, originalOptions, jqXHR,
                                            dataType /* internal */, inspected /* internal */) {
 
@@ -7539,15 +7554,15 @@
             length = list ? list.length : 0,
             executeOnly = ( structure === prefilters ),
             selection;
-
+        //遍历执行数组中的函数
         for (; i < length && ( executeOnly || !selection ); i++) {
             selection = list[i](options, originalOptions, jqXHR);
             // If we got redirected to another dataType
             // we try there if executing only and not done already
             if (typeof selection === "string") {
-                if (!executeOnly || inspected[selection]) {
+                if (!executeOnly || inspected[selection]) {//应用前置过滤器，并且重定向的数据类型也已经处理过。
                     selection = undefined;
-                } else {
+                } else {//如果是获取请求发送器
                     options.dataTypes.unshift(selection);
                     selection = inspectPrefiltersOrTransports(
                         structure, options, originalOptions, jqXHR, selection, inspected);
@@ -7556,6 +7571,7 @@
         }
         // If we're only executing or nothing was selected
         // we try the catchall dataType if not done already
+        //为当前请求应用通配符*对应的前置过滤器，或者在未找到请求发送器的情况下获取通配符*对应的请求发送器
         if (( executeOnly || !selection ) && !inspected["*"]) {
             selection = inspectPrefiltersOrTransports(
                 structure, options, originalOptions, jqXHR, "*", inspected);
@@ -7568,6 +7584,7 @@
 // A special extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes #9887
+    //负责将源对象src中的属性深度合并到目标对象target中
     function ajaxExtend(target, src) {
         var key, deep,
             flatOptions = jQuery.ajaxSettings.flatOptions || {};
@@ -7582,6 +7599,7 @@
     }
 
     jQuery.fn.extend({
+        //负责从服务端加载数据，并将返回的HTML插入匹配元素中
         load: function (url, params, callback) {
             if (typeof url !== "string" && _load) {
                 return _load.apply(this, arguments);
@@ -7657,21 +7675,21 @@
 
             return this;
         },
-
+        //负责吧一组表单元素序列化为一段url查询串，用于表单提交。
         serialize: function () {
             return jQuery.param(this.serializeArray());
         },
-
+        //负责把一组表单元素编码为一个对象数组，每个对象元素都含有属性name和value。
         serializeArray: function () {
-            return this.map(function () {
+            return this.map(function () {//获取form元素包含的表单元素
                 return this.elements ? jQuery.makeArray(this.elements) : this;
             })
-                .filter(function () {
+                .filter(function () {//过滤不应该编码的表单元素
                     return this.name && !this.disabled &&
                         ( this.checked || rselectTextarea.test(this.nodeName) ||
                         rinput.test(this.type) );
                 })
-                .map(function (i, elem) {
+                .map(function (i, elem) {//读取表单元素的属性name或者value。编码为对象数组
                     var val = jQuery(this).val();
 
                     return val == null ?
@@ -7724,6 +7742,7 @@
         // Creates a full fledged settings object into target
         // with both ajaxSettings and settings fields.
         // If target is omitted, writes into ajaxSettings.
+        //为当前请求构造完整的请求选项集
         ajaxSetup: function (target, settings) {
             if (settings) {
                 // Building a settings object
@@ -7902,6 +7921,7 @@
                         if (transport) {
                             transport.abort(statusText);
                         }
+                        //触发失败回调函数
                         done(0, statusText);
                         return this;
                     }
@@ -7910,6 +7930,13 @@
             // Callback for when everything is done
             // It is defined here because jslint complains if it is declared
             // at the end of the function (which would be more logical and readable)
+            /**
+             *
+             * @param status 表示响应的http状态码
+             * @param nativeStatusText 表示响应的http状态描述
+             * @param responses 对象，含有属性text或者xml。分别对应XMLHttpRequest对象的responseText和responseXML。
+             * @param headers
+             */
             function done(status, nativeStatusText, responses, headers) {
 
                 // Called once
@@ -7950,10 +7977,10 @@
                     if (s.ifModified) {
 
                         if (( lastModified = jqXHR.getResponseHeader("Last-Modified") )) {
-                            jQuery.lastModified[ifModifiedKey] = lastModified;
+                            jQuery.lastModified[ifModifiedKey] = lastModified;//请求资源的最后修改时间
                         }
                         if (( etag = jqXHR.getResponseHeader("Etag") )) {
-                            jQuery.etag[ifModifiedKey] = etag;
+                            jQuery.etag[ifModifiedKey] = etag;//请求标识
                         }
                     }
 
@@ -8066,6 +8093,7 @@
             }
 
             // Apply prefilters
+            //应用前置过滤器，继续修正选项
             inspectPrefiltersOrTransports(prefilters, s, options, jqXHR);
 
             // If request was aborted inside a prefiler, stop there
@@ -8101,6 +8129,7 @@
                 ifModifiedKey = s.url;
 
                 // Add anti-cache in url if needed
+                //禁用缓存
                 if (s.cache === false) {
 
                     var ts = jQuery.now(),
@@ -8155,6 +8184,7 @@
             }
 
             // Get transport
+            //获取请求发送器
             transport = inspectPrefiltersOrTransports(transports, s, options, jqXHR);
 
             // If no transport, we auto-abort
@@ -8192,6 +8222,12 @@
 
         // Serialize an array of form elements or a set of
         // key/values into a query string
+        /**
+         *
+         * @param a  待序列化的数组或者对象
+         * @param traditional  布尔值，指示是否执行传统的浅序列化
+         * @returns {string}
+         */
         param: function (a, traditional) {
             var s = [],
                 add = function (key, value) {
@@ -8224,7 +8260,13 @@
             return s.join("&").replace(r20, "+");
         }
     });
-
+    /**
+     * 负责深度序列化数组和对象
+     * @param prefix  属性名
+     * @param obj  属性值
+     * @param traditional  布尔值，指示是否执行传统的浅序列化
+     * @param add
+     */
     function buildParams(prefix, obj, traditional, add) {
         if (jQuery.isArray(obj)) {
             // Serialize array item.
@@ -8267,7 +8309,6 @@
         // Last-Modified header cache for next request
         lastModified: {},
         etag: {}
-
     });
 
     /* Handles responses to an ajax request:
@@ -8340,6 +8381,12 @@
     }
 
 // Chain conversions given the request and the original response
+    /**
+     *
+     * @param s  当前请求的完整选项集
+     * @param response  原始响应数据
+     * @returns {*}
+     */
     function ajaxConvert(s, response) {
 
         // Apply the dataFilter if provided
@@ -8392,6 +8439,7 @@
                 conv = converters[conversion] || converters["* " + current];
 
                 // If there is no direct converter, search transitively
+                //如果未找到，则查找可过渡的数据类型
                 if (!conv) {
                     conv2 = undefined;
                     for (conv1 in converters) {
@@ -8426,7 +8474,7 @@
 
 
     var jsc = jQuery.now(),
-        jsre = /(\=)\?(&|$)|\?\?/i;
+        jsre = /(\=)\?(&|$)|\?\?/i;//用于匹配选项url或data中是否含有触发jsonp请求的特征字符"=？&"，"=？$","??"的情况
 
 // Default jsonp settings
     jQuery.ajaxSetup({
@@ -8576,6 +8624,7 @@
                     };
                     // Use insertBefore instead of appendChild  to circumvent an IE6 bug.
                     // This arises when a base node is used (#2709 and #4378).
+                    //将创建的script元素插入head元素头部，开始加载外部执行文件并执行响应的脚本，即开始发送请求并执行jsonp响应
                     head.insertBefore(script, head.firstChild);
                 },
 
@@ -8935,8 +8984,16 @@
             return this.filter(":hidden").css("opacity", 0).show().end()
                 .animate({opacity: to}, speed, easing, callback);
         },
-
+        /**
+         * 负责执行一组样式动画，所有动画效果的入口
+         * @param prop 必传，对象，含有将要动画的样式
+         * @param speed 可选，字符串或数字。表示动画运行持续时间
+         * @param easing 可选，字符串，表示正在使用的缓动函数
+         * @param callback
+         * @returns {*}
+         */
         animate: function (prop, speed, easing, callback) {
+            //修正运行时间，缓动函数，重写完成回调函数
             var optall = jQuery.speed(speed, easing, callback);
 
             if (jQuery.isEmptyObject(prop)) {
@@ -8945,7 +9002,7 @@
 
             // Do not change referenced properties as per-property easing will be lost
             prop = jQuery.extend({}, prop);
-
+            //动画函数，负责遍历样式动画集合，先修正，解析，备份样式名，然后为每个样式调用构造函数jQuery.fx(elem,options,prop)构造动画对象，并开始执行动画
             function doAnimation() {
                 // XXX 'this' does not always have a nodeName when running the
                 // test suite
@@ -8963,16 +9020,17 @@
 
                 // will store per property easing and be used to determine when an animation is complete
                 opt.animatedProperties = {};
-
+                //遍历动画样式集合
                 for (p in prop) {
 
                     // property name normalization
+                    //将样式名转换为驼峰式
                     name = jQuery.camelCase(p);
                     if (p !== name) {
                         prop[name] = prop[p];
                         delete prop[p];
                     }
-
+                    //解析每个样式的结束值和缓动函数
                     val = prop[name];
 
                     // easing resolution: per property > opt.specialEasing > opt.easing > 'swing' (default)
@@ -8986,7 +9044,7 @@
                     if (val === "hide" && hidden || val === "show" && !hidden) {
                         return opt.complete.call(this);
                     }
-
+                    //备份或修正可能影响动画效果的样式
                     if (isElement && ( name === "height" || name === "width" )) {
                         // Make sure that nothing sneaks out
                         // Record all 3 overflow attributes because IE does not
@@ -9014,11 +9072,12 @@
                 if (opt.overflow != null) {
                     this.style.overflow = "hidden";
                 }
-
+                //再次遍历动画样式集合
                 for (p in prop) {
+                    //为每个样式构造标准动画对象
                     e = new jQuery.fx(this, opt, p);
                     val = prop[p];
-
+                    //样式值val是toggle,show,hide之一的情况
                     if (rfxtypes.test(val)) {
 
                         // Tracks whether to show or hide based on private
@@ -9031,7 +9090,7 @@
                             e[val]();
                         }
 
-                    } else {
+                    } else {//样式值是数值型的情况
                         parts = rfxnum.exec(val);
                         start = e.cur();
 
@@ -9067,17 +9126,24 @@
                 this.each(doAnimation) :
                 this.queue(optall.queue, doAnimation);
         },
-
+        /**
+         *
+         * @param type
+         * @param clearQueue 指示是否清空动画队列，即是否取消匹配元素上尚未执行的动画
+         * @param gotoEnd 指示停止动画时是否直接跳到完成状态
+         * @returns {*}
+         */
         stop: function (type, clearQueue, gotoEnd) {
             if (typeof type !== "string") {
                 gotoEnd = clearQueue;
                 clearQueue = type;
                 type = undefined;
             }
+            //清空动画队列
             if (clearQueue && type !== false) {
                 this.queue(type || "fx", []);
             }
-
+            //遍历匹配元素集合
             return this.each(function () {
                 var index,
                     hadTimers = false,
@@ -9107,6 +9173,7 @@
 
                 for (index = timers.length; index--;) {
                     if (timers[index].elem === this && (type == null || timers[index].queue === type)) {
+                        //移除单帧闭包函数
                         if (gotoEnd) {
 
                             // force the next step to be the last
@@ -9122,6 +9189,7 @@
                 // start the next in the queue if the last step wasn't forced
                 // timers currently will call their complete callbacks, which will dequeue
                 // but only if they were gotoEnd
+                //继续执行剩余的动画函数doAnimation()
                 if (!( gotoEnd && hadTimers )) {
                     jQuery.dequeue(this, type);
                 }
@@ -9166,6 +9234,13 @@
     });
 
     jQuery.extend({
+        /**
+         * 负责修正运行时间，缓动函数，重写完成回调函数
+         * @param speed 字符串或数字，表示动画运行持续时间
+         * @param easing 字符串，表示所使用的缓动函数
+         * @param fn 回调函数，当动画完成时被调用
+         * @returns {{complete: (*|boolean), duration: *, easing: (*|boolean)}}
+         */
         speed: function (speed, easing, fn) {
             var opt = speed && typeof speed === "object" ? jQuery.extend({}, speed) : {
                 complete: fn || !fn && easing ||
@@ -9199,11 +9274,13 @@
 
             return opt;
         },
-
+        //缓动函数集合，含有两个内置函数
         easing: {
+            //匀速运动
             linear: function (p, n, firstNum, diff) {
                 return firstNum + diff * p;
             },
+            //慢-->块-->慢
             swing: function (p, n, firstNum, diff) {
                 return ( ( -Math.cos(p * Math.PI) / 2 ) + 0.5 ) * diff + firstNum;
             }
@@ -9246,6 +9323,12 @@
         },
 
         // Start an animation from one number to another
+        /**
+         * 负责开始执行单个样式的动画
+         * @param from
+         * @param to
+         * @param unit
+         */
         custom: function (from, to, unit) {
             var self = this,
                 fx = jQuery.fx;
@@ -9255,7 +9338,7 @@
             this.now = this.start = from;
             this.pos = this.state = 0;
             this.unit = unit || this.unit || ( jQuery.cssNumber[this.prop] ? "" : "px" );
-
+            //闭包，单帧闭包动画函数
             function t(gotoEnd) {
                 return self.step(gotoEnd);
             }
@@ -9311,12 +9394,12 @@
                 done = true,
                 elem = this.elem,
                 options = this.options;
-
+            //参数gotoEnd为true或者超过了动画完成时间，则结束当前样式动画。
             if (gotoEnd || t >= options.duration + this.startTime) {
                 this.now = this.end;
                 this.pos = this.state = 1;
                 this.update();
-
+                //如果当前元素的所有样式动画全部完成，则执行完成回调函数。
                 options.animatedProperties[this.prop] = true;
 
                 for (p in options.animatedProperties) {
@@ -9363,7 +9446,7 @@
 
                 return false;
 
-            } else {
+            } else {//当前动画样式尚未完成的情况
                 // classical easing cannot be used with an Infinity duration
                 if (options.duration == Infinity) {
                     this.now = t;
@@ -9384,6 +9467,7 @@
     };
 
     jQuery.extend(jQuery.fx, {
+        //负责遍历执行全局动画函数数组jQuery.timers中的单帧闭包动画函数(gotoEnd)
         tick: function () {
             var timer,
                 timers = jQuery.timers,
@@ -9392,6 +9476,7 @@
             for (; i < timers.length; i++) {
                 timer = timers[i];
                 // Checks the timer has not already been removed
+                //如果某个闭包单帧回调函数返回false，说明该函数代表的动画样式已经完成，应及时从数组中移除
                 if (!timer() && timers[i] === timer) {
                     timers.splice(i--, 1);
                 }
